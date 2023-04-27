@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>Javascript Quiz</title>
+  <link rel="stylesheet" href="./Assets/css/style.css" />
+</head>
+<body>
+<header>
+  <h1>Javascript Quiz</h1>
+  <p>Try to answer the following code-related questions within the time limit. 
+    Keep in mind that incorrect answers will penalize your score time by ten seconds!</p>
+  <button id="start-quiz">Start Quiz</button>
+</header>
+<main>
+  <div id="quiz-container">
+    <div id="question-1" style="display:none;">
+      <h2>Commonly used data types DO NOT Include:</h2>
+      <form>
+        <input type="radio" name="answer-1" value="strings"> strings<br>
+        <input type="radio" name="answer-1" value="booleans"> booleans<br>
+        <input type="radio" name="answer-1" value="alerts"> alerts<br>
+        <input type="radio" name="answer-1" value="numbers"> numbers<br>
+        <button id="submit-answer-1">Submit Answer</button>
+      </form>
+    </div>
+    <div id="question-2" style="display:none;">
+        <h2>The condition in an if / else statement is enclosed within ___.</h2>
+        <form>
+          <input type="radio" name="answer-2" value="quotes"> quotes<br>
+          <input type="radio" name="answer-2" value="curly-brackets"> curly brackets<br>
+          <input type="radio" name="answer-2" value="parenthesis"> parenthesis<br>
+          <input type="radio" name="answer-2" value="square-brackets"> square brackets<br>
+          <button id="submit-answer-2">Submit Answer</button>
+        </form>
+      </div>
+      <div id="question-3" style="display:none;">
+        <h2>Arays in JavaScript can be used to store ___.</h2>
+        <form>
+          <input type="radio" name="answer-3" value="numbers-and-strings"> numbers and strings<br>
+          <input type="radio" name="answer-3" value="other-arrays"> other arrays<br>
+          <input type="radio" name="answer-3" value="booleans"> booleans<br>
+          <input type="radio" name="answer-3" value="all-of-the-above"> all of the above<br>
+          <button id="submit-answer-3">Submit Answer</button>
+        </form>
+      </div>
+      <div id="question-4" style="display:none;">
+        <h2>String values must be enclosed within ____ when being assigned to variables.</h2>
+        <form>
+          <input type="radio" name="answer-4" value="commas"> commas<br>
+          <input type="radio" name="answer-4" value="curly-brackets"> booleans<br>
+          <input type="radio" name="answer-4" value="quotes"> quotes<br>
+          <input type="radio" name="answer-4" value="parenthesis"> parenthesis<br>
+          <button id="submit-answer-4">Submit Answer</button>
+        </form>
+      </div>
+      <div id="question-5" style="display:none;">
+        <h2>A very useful tool used during development and debugging for printing content to the debugger is:</h2>
+        <form>
+          <input type="radio" name="answer-5" value="javascript"> javascript<br>
+          <input type="radio" name="answer-5" value="terminal/bash"> terminal/bash<br>
+          <input type="radio" name="answer-5" value="for loops"> for loops<br>
+          <input type="radio" name="answer-5" value="console.log"> console.log<br>
+          <button id="submit-answer-5">Submit Answer</button>
+        </form>
+        <div id= "wrongAnswer">
+            
+        </div>
+      </div>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
