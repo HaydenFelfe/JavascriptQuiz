@@ -23,9 +23,20 @@ let timerInterval;
 function updateTimer() {
   timerElement.textContent = `${timeRemaining} seconds`;
   timeRemaining--;
-  if (timeRemaining < 0) {
-    
+  if (timeRemaining < 1) {
+    clearInterval(timerInterval);
+    timer.style.display = "none";
+    initialsEl.style.display = "block";
+    scoreEl.textContent = 0;
+    hideQuestions();
     endQuiz();
+  }
+  function hideQuestions() {
+    question1.style.display = "none";
+    question2.style.display = "none";
+    question3.style.display = "none";
+    question4.style.display = "none";
+    question5.style.display = "none";
   }
 }
 function endQuiz() {
@@ -34,6 +45,7 @@ function endQuiz() {
   wrongAnswer.style.display = "none";
   initialsEl.style.display = "block";
 scoreEl.textContent = timeRemaining;
+
   // let finalScore;
   // if (timeRemaining > 0) {
   //   finalScore = timeRemaining;
@@ -142,7 +154,10 @@ submitAnswerButton5.addEventListener("click", function (event) {
     timeRemaining -= 10;
 	setTimeout(()=> {
     wrongAnswer.textContent = "";
+    endQuiz();
     }, 3000)
+  wrongAnswer.style.display = "block";
+  return;
   }
   
   endQuiz();
@@ -151,7 +166,8 @@ submitAnswerButton5.addEventListener("click", function (event) {
 
 function submitStuff() {
   var initials = initialsInput.value;
-  console.log(initials);
+  initials = JSON.parse(localStorage.getItem("initials") || "[]");
+  console.log(initials)
 }
 
 submitBtn.addEventListener("click", submitStuff )
