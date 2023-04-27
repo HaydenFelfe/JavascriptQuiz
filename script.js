@@ -63,10 +63,14 @@ submitAnswerButton1.addEventListener("click", function (event) {
   console.log(answer1);
   if (answer1 === "booleans") {
     question1.style.display = "none";
-    wrongAnswer.style.display = "none";
     question2.style.display = "block";
   } else {
-    wrongAnswer.textContent = "wrong";
+    wrongAnswer.style.color = "red";
+    wrongAnswer.textContent = "Wrong!";
+    timeRemaining -= 10;
+	setTimeout(()=> {
+    wrongAnswer.textContent = "";
+    }, 3000)
   }
   
 });
@@ -79,7 +83,12 @@ submitAnswerButton2.addEventListener("click", function (event) {
     question2.style.display = "none";
     question3.style.display = "block";
   } else {
-    wrongAnswer.textContent = "wrong";
+    wrongAnswer.style.color = "red";
+    wrongAnswer.textContent = "Wrong!";
+    timeRemaining -= 10;
+	setTimeout(()=> {
+    wrongAnswer.textContent = "";
+    }, 3000)
   }
   
 });
@@ -91,7 +100,12 @@ submitAnswerButton3.addEventListener("click", function (event) {
     question3.style.display = "none";
     question4.style.display = "block";
   } else {
-    wrongAnswer.textContent = "wrong";
+    wrongAnswer.style.color = "red";
+    wrongAnswer.textContent = "Wrong!";
+    timeRemaining -= 10;
+	setTimeout(()=> {
+    wrongAnswer.textContent = "";
+    }, 3000)
   }
   
 });
@@ -105,7 +119,12 @@ submitAnswerButton4.addEventListener("click", function (event) {
     question5.style.display = "block";
   }
   else {
-    wrongAnswer.textContent = "wrong";
+    wrongAnswer.style.color = "red";
+    wrongAnswer.textContent = "Wrong!";
+    timeRemaining -= 10;
+	setTimeout(()=> {
+    wrongAnswer.textContent = "";
+    }, 3000)
   }
   
 });
@@ -118,7 +137,12 @@ submitAnswerButton5.addEventListener("click", function (event) {
     wrongAnswer.style.display = "none";
   }
   else {
-    wrongAnswer.textContent = "wrong";
+    wrongAnswer.style.color = "red";
+    wrongAnswer.textContent = "Wrong!";
+    timeRemaining -= 10;
+	setTimeout(()=> {
+    wrongAnswer.textContent = "";
+    }, 3000)
   }
   
   endQuiz();
