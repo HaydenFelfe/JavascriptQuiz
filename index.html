@@ -4,7 +4,7 @@
   <head>
   <meta charset="UTF-8">
   <title>Javascript Quiz</title>
-  <link rel="stylesheet" href="./Assets/css/style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 <header>
@@ -13,7 +13,9 @@
     Keep in mind that incorrect answers will penalize your score time by ten seconds!</p>
   <button id="start-quiz">Start Quiz</button>
 </header>
+<div id= "wrongAnswer"></div>
 <main>
+  <p id="timer" style="display:none;">Time remaining: <span id="time-remaining"></span></p>
   <div id="quiz-container">
     <div id="question-1" style="display:none;">
       <h2>Commonly used data types DO NOT Include:</h2>
@@ -41,7 +43,7 @@
           <input type="radio" name="answer-3" value="numbers-and-strings"> numbers and strings<br>
           <input type="radio" name="answer-3" value="other-arrays"> other arrays<br>
           <input type="radio" name="answer-3" value="booleans"> booleans<br>
-          <input type="radio" name="answer-3" value="all-of-the-above"> all of the above<br>
+          <input type="radio" name="answer-3" value="all"> all of the above<br>
           <button id="submit-answer-3">Submit Answer</button>
         </form>
       </div>
@@ -60,14 +62,18 @@
         <form>
           <input type="radio" name="answer-5" value="javascript"> javascript<br>
           <input type="radio" name="answer-5" value="terminal/bash"> terminal/bash<br>
-          <input type="radio" name="answer-5" value="for loops"> for loops<br>
+          <input type="radio" name="answer-5" value="for-loops"> for loops<br>
           <input type="radio" name="answer-5" value="console.log"> console.log<br>
           <button id="submit-answer-5">Submit Answer</button>
         </form>
-        <div id= "wrongAnswer">
-            
-        </div>
       </div>
+    </div>
+    <div id="initialsSection" style="display: none;">
+      <h2>All Done!</h2>
+      <p>Your score is <span id = "finalScore"></span>!</p>
+      <label>Enter intials:</label>
+      <input id="initials" type="text" maxlength="3">
+      <button id="submit-initials">Submit</button>
     </div>
 </main>
 <script src="script.js"></script>
