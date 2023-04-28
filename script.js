@@ -17,6 +17,7 @@ const initialsEl = document.getElementById("initialsSection");
 const scoreEl = document.getElementById("finalScore");
 const submitBtn = document.getElementById("submit-initials");
 const initialsInput = document.getElementById("initials");
+const goBack = document.getElementById("goBack");
 var grabHighscores = document.getElementById("grabScores");
 var scoreList = document.getElementById("scoreList");
 
@@ -190,5 +191,9 @@ scoreList.appendChild(list);
 
 submitBtn.addEventListener("click", submitScores);
 
+goBack.addEventListener("click", function(event){
+  event.preventDefault();
+  location.reload();
+});
 
 grabHighscores.addEventListener("click", grabScores);

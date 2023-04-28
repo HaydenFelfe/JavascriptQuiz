@@ -25,7 +25,9 @@ html, body {
     
     margin-top: 10px;
   }
-  
+  ul{
+    list-style:none;
+  }
   input[type="radio"] {
     list-style: none;
     margin-right: 10px;
