@@ -17,13 +17,16 @@ const initialsEl = document.getElementById("initialsSection");
 const scoreEl = document.getElementById("finalScore");
 const submitBtn = document.getElementById("submit-initials");
 const initialsInput = document.getElementById("initials");
+var grabHighscores = document.getElementById("grabScores");
+var scoreList = document.getElementById("scoreList");
+
 let timeRemaining = 75;
 let timerInterval;
 
 function updateTimer() {
   timerElement.textContent = `${timeRemaining} seconds`;
   timeRemaining--;
-  if (timeRemaining < 1) {
+  if (timeRemaining < 0) {
     clearInterval(timerInterval);
     timer.style.display = "none";
     initialsEl.style.display = "block";
@@ -154,7 +157,7 @@ submitAnswerButton5.addEventListener("click", function (event) {
     timeRemaining -= 10;
 	setTimeout(()=> {
     wrongAnswer.textContent = "";
-    endQuiz();
+    
     }, 3000)
   wrongAnswer.style.display = "block";
   return;
@@ -164,10 +167,28 @@ submitAnswerButton5.addEventListener("click", function (event) {
 });
 
 
-function submitStuff() {
+function submitScores() {
   var initials = initialsInput.value;
-  initials = JSON.parse(localStorage.getItem("initials") || "[]");
-  console.log(initials)
+  var score = timeRemaining;
+  var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  console.log(highScores);
+  var newScore = {initials: initials, score: score};
+  highScores.push(newScore)
+  window.localStorage.setItem("highScores",JSON.stringify(highScores))
+}
+function grabScores () {
+var scoreArray = JSON.parse(localStorage.getItem("highScores")) || [];
+scoreArray.sort((a,b)=>b.score-a.score);
+console.log(scoreArray);
+scoreArray.forEach(element => {
+
+var list = document.createElement("li");
+list.textContent = element.initials + " " + element.score;
+scoreList.appendChild(list);
+});
 }
 
-submitBtn.addEventListener("click", submitStuff )
+submitBtn.addEventListener("click", submitScores);
+
+
+grabHighscores.addEventListener("click", grabScores);

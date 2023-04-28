@@ -41,4 +41,6 @@ html, body {
   form input[type="radio"]::marker{
     color: aqua;
   }
-  
+#time-reminaing{
+    color: blueviolet;
+}
